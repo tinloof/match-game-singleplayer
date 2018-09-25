@@ -1,18 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 html, body {
 	height: 100%;
 	width: 100%;
 	padding: 0;
 	margin: 0;
 	background: #FAFAFA;
-	font-family: 'Helvetica Neue', arial, sans-serif;
-	font-weight: 400;
-	color: #444;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 12px;
 }
 
 * {
 	box-sizing: border-box;
+}
+
+button {
+	font-family: 'Press Start 2P', cursive;
+	color: #000;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #app {
