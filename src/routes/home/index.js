@@ -1,10 +1,9 @@
-import { h } from 'preact';
-import style from './style';
+// routes/home
 
 const Home = () => (
-	<div class={style.home}>
+	<div>
 		<h1>Home</h1>
-		<p>This is the Home component.</p>
+		<p>This is the Home route.</p>
 	</div>
 );
 

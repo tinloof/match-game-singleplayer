@@ -7,7 +7,7 @@
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
-    "dev": "preact watch",
+    "dev": "preact watch -p 5000",
     "lint": "eslint src",
     "test": "jest"
   },
@@ -41,7 +41,7 @@
       "/node_modules/",
       "<rootDir>/tests/__mocks__/*"
     ],
-    "testURL": "http://localhost:8080",
+    "testURL": "http://localhost:5000",
     "moduleFileExtensions": [
       "js",
       "jsx"
