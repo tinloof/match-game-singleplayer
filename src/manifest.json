@@ -1,11 +1,11 @@
 {
-  "name": "match-game-singleplayer",
-  "short_name": "match-game-singleplayer",
+  "name": "Match Game",
+  "short_name": "Match Game",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "theme_color": "#fff",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "/assets/icons/android-chrome-512x512.png",
+      "src": "/assets/icons/android-chrome-256x256.png",
       "type": "image/png",
       "sizes": "512x512"
     }
