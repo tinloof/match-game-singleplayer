@@ -1,36 +1,27 @@
-
 import { Component } from 'preact';
 import { route } from 'preact-router';
 
 import Card from '../../components/card';
 import style from './style';
 
-
-/**
- * helper function to generate a schuffled array of emojis
- */
-function generateGridCards () {
-	const emojis = ['🚀', '😺', '🐶', '🏈', '📦', '🙊'];
-
-	return [...emojis, ...emojis]
-		.sort(() => Math.random() - Math.random())
-		.map((emoji, idx) => ({ key: idx, emoji }));
-}
-
 export default class Game extends Component {
-  state = { flippedCards: { first: {}, second: {} }, isMatched: {}, score: 0 };
-	cards = generateGridCards();
+	state = {
+		flippedCards: { first: {}, second: {} },
+		isMatched: {},
+		score: 0
+	};
 
 	getCardFlipStatus = ({ key, emoji }) => {
 		const { flippedCards, isMatched } = this.state;
-
+		
+		if (isMatched[emoji]) {
+			return 'MATCHED';
+		}
+		
 		if ([flippedCards.first.key,  flippedCards.second.key].includes(key)) {
 			return 'FLIPPED';
 		}
 
-		if (isMatched[emoji]) {
-			return 'MATCHED';
-		}
 
 		return 'DEFAULT';
 	}
@@ -79,12 +70,12 @@ export default class Game extends Component {
 		}, 500);
 	}
 
-	render(_, { score }) {
+	render(props, state) {
 		return (
 			<div class={style.game}>
-				<header class={style.score}>Score: {score}</header>
+				<header class={style.score}>Score: {state.score}</header>
 				<div class={style.grid}>
-					{this.cards.map(card => (
+					{props.cards.map(card => (
 						<Card
 							hiddenValue={card.emoji}
 							flipStatus={this.getCardFlipStatus(card)}
