@@ -4,7 +4,7 @@
 <img src="./demo.gif" alt="demo video" />
 </p>
 
-PWA match game for this Medium article.
+PWA match game for [this](https://hackernoon.com/how-to-create-a-pwa-game-using-preact-in-5-steps-tutorial-c8b177037c80) Medium article.
 
 ## CLI Commands
 
