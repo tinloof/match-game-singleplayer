@@ -4,8 +4,20 @@ import { route } from 'preact-router';
 import Card from '../../components/card';
 import style from './style';
 
+/**
+ * helper function to generate a shuffled array of cards
+ */
+function generateGridCards () {
+	const emojis = ['🚀', '😺', '🐶', '🏈', '📦', '🙊'];
+
+	return [...emojis, ...emojis]
+		.sort(() => Math.random() - Math.random())
+		.map((emoji, idx) => ({ key: idx, emoji }));
+}
+
 export default class Game extends Component {
 	state = {
+		cards: generateGridCards(),
 		flippedCards: { first: {}, second: {} },
 		isMatched: {},
 		score: 0
@@ -75,7 +87,7 @@ export default class Game extends Component {
 			<div class={style.game}>
 				<header class={style.score}>Score: {state.score}</header>
 				<div class={style.grid}>
-					{props.cards.map(card => (
+					{state.cards.map(card => (
 						<Card
 							hiddenValue={card.emoji}
 							flipStatus={this.getCardFlipStatus(card)}
